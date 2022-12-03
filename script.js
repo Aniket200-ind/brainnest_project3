@@ -1,33 +1,5 @@
 "use strict";
 
-//Deciding the winner of the single round
-const playRound = (playerSelection, computerSelection) => {
-    if (playerSelection === computerSelection) {
-        return 'Tie';
-    }else if(playerSelection === "rock" && computerSelection === "scissors" ||
-             playerSelection === "paper" && computerSelection === "rock" ||
-             playerSelection === "scissors" && computerSelection === "paper"
-            ){
-        return true;
-    }else if(playerSelection === "scissors" && computerSelection === "rock" ||
-             playerSelection === "rock" && computerSelection === "paper" ||
-             playerSelection === "paper" && computerSelection === "scissors"
-            ){
-        return false;
-    }
-}
-
-//Generating computer input selection
-function computerPlay() {
-    let randomizer = Math.floor(Math.random() * 3); 
-    let randomSelection = ["rock", "paper", "scissors"][randomizer];
-    return randomSelection;
-}
-
-//Storing computer input selection
-const computerSelection = computerPlay();
-
-
 function game() {
     let playerScore = 0;
     let botScore = 0;
@@ -65,6 +37,33 @@ function game() {
         console.log('Computer have won');
     }
 }
+
+//Deciding the winner of the single round
+const playRound = (playerSelection, computerSelection) => {
+    if (playerSelection === computerSelection) {
+        return 'Tie';
+    }else if(playerSelection === "rock" && computerSelection === "scissors" ||
+             playerSelection === "paper" && computerSelection === "rock" ||
+             playerSelection === "scissors" && computerSelection === "paper"
+            ){
+        return true;
+    }else if(playerSelection === "scissors" && computerSelection === "rock" ||
+             playerSelection === "rock" && computerSelection === "paper" ||
+             playerSelection === "paper" && computerSelection === "scissors"
+            ){
+        return false;
+    }
+}
+
+//Generating computer input selection
+function computerPlay() {
+    let randomizer = Math.floor(Math.random() * 3); 
+    let randomSelection = ["rock", "paper", "scissors"][randomizer];
+    return randomSelection;
+}
+
+//Storing computer input selection
+const computerSelection = computerPlay();
 
 //Calling the game function
 game();
