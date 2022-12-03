@@ -4,17 +4,15 @@
 const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === computerSelection) {
         return 'Tie';
-    }else if(playerSelection === "rock" && computerSelection === "scissors"){
+    }else if(playerSelection === "rock" && computerSelection === "scissors" ||
+             playerSelection === "paper" && computerSelection === "rock" ||
+             playerSelection === "scissors" && computerSelection === "paper"
+            ){
         return true;
-    }else if(playerSelection === "scissors" && computerSelection === "rock"){
-        return false;
-    }else if(playerSelection === "rock" && computerSelection === "paper"){
-        return false;
-    }else if(playerSelection === "paper" && computerSelection === "rock"){
-        return true;
-    }else if(playerSelection === "scissors" && computerSelection === "paper"){
-        return true;
-    }else if(playerSelection === "paper" && computerSelection === "scissors"){
+    }else if(playerSelection === "scissors" && computerSelection === "rock" ||
+             playerSelection === "rock" && computerSelection === "paper" ||
+             playerSelection === "paper" && computerSelection === "scissors"
+            ){
         return false;
     }
 }
